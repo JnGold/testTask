@@ -1,0 +1,18 @@
+CREATE TABLE Posts (
+                      userId int,
+                      id int,
+                      title varchar(255) NOT NULL,
+                      body varchar(1023) NOT NULL,
+                      PRIMARY KEY (id))
+    CHARACTER SET utf8mb4;
+
+CREATE TABLE Comments (
+                          postId int,
+                          id int,
+                          name varchar(255) NOT NULL,
+                          email varchar(255) NOT NULL,
+                          body varchar(1023) NOT NULL,
+                          PRIMARY KEY (id),
+                          FOREIGN KEY (postId) REFERENCES Posts(id)
+                      )
+    CHARACTER SET utf8mb4;

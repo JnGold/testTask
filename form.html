@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find posts</title>
+</head>
+<body>
+<form action="findComments.php" method="get" name="form" onsubmit="return required()">
+    <label>
+        <input type="text" name="textPart" minlength="3">
+    </label>
+    <input type="submit" value="Search">
+</form>
+</body>
+</html>
+
+<script>
+    function required() {
+        var inputValue = document.forms["form"]["textPart"].value;
+        if (inputValue === "") {
+            alert("The field cannot be empty");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
